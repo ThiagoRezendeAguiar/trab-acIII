@@ -210,6 +210,12 @@ public:
         printFinalResults();
     }
 
+    void setRegister(string index, int value) 
+    {
+        registers[index].value = value;
+    }
+
+
     void setMemory(string index, int value)
     {
         memory[index] = value;
@@ -791,8 +797,16 @@ int main()
         return 1;
     }
 
-    simulator.setMemory("0", 5);
-    simulator.setMemory("8", 0);
+    simulator.setRegister("R0", 5);   
+    simulator.setRegister("R1", 3);   
+    simulator.setRegister("R2", 2);   
+    simulator.setRegister("R3", 3);   
+    simulator.setRegister("R4", 2);  
+    simulator.setRegister("R5", 5); 
+    
+    simulator.setMemory("105", 10); 
+    simulator.setMemory("203", 0);  
+
     simulator.run();
 
     return 0;
