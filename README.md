@@ -20,25 +20,6 @@
 ### 3. **Dependências WAW (Write After Write) - Resolvidas por Renomeação**
 - `SUB R12 R11 R9` vs `MUL R12 R10 R3` (R12 é escrito duas vezes)
 
-## Cronograma de Execução Esperado
-
-```
-Instrução           Issue  ExecComp  WriteResult  Commit
-ADD R6 R0 R1          1       3          4          5
-SUB R7 R6 R2          2       5          6          7
-MUL R8 R7 R3          3      16         17         18
-DIV R9 R8 R4          4      58         59         60
-LW R10 R0 100         5       7          8          9
-SW R10 R1 200         6      10         11         12
-ADD R11 R10 R5        7      10         11         13
-ADD R10 R2 R4         8      10         11         14
-SUB R12 R11 R9        9      61         62         63
-MUL R12 R10 R3       10      21         22         64
-ADD R13 R12 R6       11      23         24         65
-SUB R14 R13 R7       12      25         26         66
-MUL R15 R14 R2       13      36         37         67
-```
-
 ## Valores Finais dos Registradores
 
 ```
